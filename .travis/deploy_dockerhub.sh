@@ -6,7 +6,7 @@ else
     TAG="$TRAVIS_BRANCH"
 fi
 
-TRAVIS_REPO_SLUG=$(echo $TRAVIS_REPO_SLUG | tr '[:upper:]' '[:lower:]')
+DOCKER_REPO_SLUG="stanislavsiska/demo-cicd-pipeline"
 
-docker build -f Dockerfile -t $TRAVIS_REPO_SLUG:$TAG .
-docker push $TRAVIS_REPO_SLUG
+docker build -f Dockerfile -t $DOCKER_REPO_SLUG:$TAG .
+docker push $DOCKER_REPO_SLUG
